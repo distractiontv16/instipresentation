@@ -57,3 +57,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Filtrage des formations
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const formationCards = document.querySelectorAll('.formation-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Retirer la classe active de tous les boutons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Ajouter la classe active au bouton cliqué
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            formationCards.forEach(card => {
+                if (filter === 'tous') {
+                    card.style.display = 'block';
+                } else if (card.dataset.category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});

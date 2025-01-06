@@ -1,9 +1,10 @@
 /* Palette de couleurs */
 :root {
-    --bleu-nuit: #1A237E;
-    --jaune: #FFFF6B;
-    --gris: #607D8B;
-    --bleu-fond: #FFEDDC;
+    --bleu-principal: #0740A0;
+    --bleu-clair: #3B68B5;
+    --bleu-fonce: #052C6E;
+    --gris-clair: #F5F7FA;
+    --gris: #6B7280;
     --blanc: #FFFFFF;
 }
 
@@ -17,13 +18,13 @@
 body {
     font-family: 'Roboto', Arial, sans-serif;
     color: var(--gris);
-    background-color: var(--bleu-fond);
+    background-color: var(--gris-clair);
     line-height: 1.5;
 }
 
 /* Header */
 header {
-    background-color: var(--bleu-nuit);
+    background-color: var(--bleu-principal);
     width: 100%;
     position: relative;
 }
@@ -38,7 +39,7 @@ header {
 
 /* Logo */
 .logo-container {
-    background-color: var(--jaune);
+    background-color: var(--bleu-principal);
     width: 100%;
     padding: 20px 10px;
     display: flex;
@@ -54,7 +55,7 @@ header {
 
 h1 {
     font-size: 20px;
-    color: var(--bleu-nuit);
+    color: var(--gris-clair);
     font-weight: bold;
     margin: 0 20px;
 }
@@ -91,7 +92,7 @@ h1 .un {
 }
 
 .navbar ul li a:hover {
-    color: var(--jaune);
+    color: var(--bleu-clair);
 }
 
 .home-icon {
@@ -115,7 +116,7 @@ h1 .un {
 }
 
 .search-bar button {
-    background-color: var(--jaune);
+    background-color: var(--bleu-principal);
     border: none;
     padding: 5px 10px;
     cursor: pointer;
@@ -157,8 +158,8 @@ h1 .un {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--jaune);
-    color: var(--bleu-nuit);
+    background-color: var(--bleu-principal);
+    color: var(--blanc);
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -310,14 +311,14 @@ h1 .un {
 
 .mot-directrice h2 {
     font-size: 24px;
-    color: var(--bleu-nuit);
+    color: var(--bleu-principal);
     margin-bottom: 10px;
 }
 
 .mot-directrice .highlight {
     width: 190px;
     height: 8px;
-    background-color: var(--jaune);
+    background-color: var(--bleu-principal);
     border: none;
     margin-bottom: 20px;
 }
@@ -330,7 +331,7 @@ h1 .un {
 }
 
 .mot-directrice .btn-lire-plus {
-    background-color: var(--bleu-nuit);
+    background-color: var(--bleu-principal);
     color: var(--blanc);
     padding: 10px 20px;
     border: none;
@@ -340,8 +341,8 @@ h1 .un {
 }
 
 .mot-directrice .btn-lire-plus:hover {
-    background-color: var(--jaune);
-    color: var(--bleu-nuit);
+    background-color: var(--bleu-clair);
+    color: var(--blanc);
 }
 
 .mot-directrice .video {
@@ -417,14 +418,14 @@ h1 .un {
 }
 
 .statistiques h2 {
-    color: var(--bleu-nuit);
+    color: var(--bleu-principal);
     margin-bottom: 10px;
 }
 
 .statistiques .highlight {
     width: 190px;
     height: 8px;
-    background-color: var(--jaune);
+    background-color: var(--bleu-principal);
     border: none;
     margin-bottom: 40px;
 }
@@ -463,7 +464,7 @@ h1 .un {
 .stat-info .number {
     font-size: 24px;
     font-weight: bold;
-    color: var(--bleu-nuit);
+    color: var(--bleu-principal);
 }
 
 .stat-info .label {
@@ -525,14 +526,14 @@ h1 .un {
 }
 
 .partenaires h2 {
-    color: var(--bleu-nuit);
+    color: var(--bleu-principal);
     margin-bottom: 10px;
 }
 
 .partenaires .highlight {
     width: 190px;
     height: 8px;
-    background-color: var(--jaune);
+    background-color: var(--bleu-principal);
     border: none;
     margin-bottom: 40px;
 }
@@ -611,5 +612,143 @@ h1 .un {
     .partenaires {
         margin: 0;
         padding: 20px;
+    }
+}
+
+/* Section Formations */
+.formations {
+    padding: 40px 20px;
+    background-color: var(--blanc);
+}
+
+.formations h2 {
+    color: var(--bleu-principal);
+    margin-bottom: 10px;
+}
+
+.formations .highlight {
+    width: 190px;
+    height: 8px;
+    background-color: var(--bleu-principal);
+    border: none;
+    margin-bottom: 40px;
+}
+
+.formation-intro {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+    line-height: 1.6;
+    color: var(--gris);
+}
+
+.formation-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn.active {
+    background-color: var(--bleu-principal);
+    color: var(--blanc);
+}
+
+.formation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.formation-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.formation-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--bleu-clair);
+}
+
+.formation-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.diplome, .formation-type {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.diplome img, .formation-type img {
+    width: 24px;
+    height: 24px;
+}
+
+.card-content h4 {
+    color: var(--bleu-principal);
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.card-content p {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.btn-details {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bleu-principal);
+    color: var(--blanc);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-details:hover {
+    background-color: var(--bleu-clair);
+    color: var(--blanc);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .formation-intro {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .formation-cards {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }

@@ -40,3 +40,20 @@ slides.addEventListener('mouseleave', () => {
 
 // Afficher la première slide au chargement
 showSlide(0);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btnLirePlus = document.querySelector('.btn-lire-plus');
+    const messageSuite = document.querySelector('.message-suite');
+    const message = document.querySelector('.message');
+    
+    btnLirePlus.addEventListener('click', function() {
+        messageSuite.classList.toggle('hidden');
+        message.classList.toggle('expanded');
+        
+        if (messageSuite.classList.contains('hidden')) {
+            btnLirePlus.textContent = 'Lire plus';
+        } else {
+            btnLirePlus.textContent = 'Lire moins';
+        }
+    });
+});

@@ -12,7 +12,7 @@ git add .
 
 3. Créez un commit avec un message décrivant vos modifications :
 ```bash
-git commit -m "Deux nouvelle section ajouter!"
+git commit -m "Une nouvelle section ajouter!"
 ```
 
 4. Poussez les modifications vers GitHub :

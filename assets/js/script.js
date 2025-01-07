@@ -84,3 +84,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.querySelectorAll('.btn-details').forEach(button => {
+    button.addEventListener('click', function() {
+        // Trouve le conteneur parent le plus proche
+        const cardContent = this.closest('.card-content');
+        // Cherche les détails uniquement dans ce conteneur
+        const detailsSection = cardContent.querySelector('.details-supplementaires');
+        
+        detailsSection.classList.toggle('hidden');
+        
+        // Change le texte du bouton
+        this.textContent = detailsSection.classList.contains('hidden') ? 
+            'Plus de détails' : 'Moins de détails';
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+        // Masquer tous les slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Gérer la boucle des slides
+        currentSlide = (n + slides.length) % slides.length;
+
+        // Afficher le slide actif
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    // Événements pour les boutons précédent/suivant
+    prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
+    nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+
+    // Événements pour les points de navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // Défilement automatique optionnel
+    setInterval(() => showSlide(currentSlide + 1), 5000);
+});
